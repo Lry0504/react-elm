@@ -2,6 +2,7 @@ import Server from './server';
 import { getUrlConcat } from '../utils/commons';
 import { __await } from 'tslib';
 import { EDESTADDRREQ } from 'constants';
+import { get } from 'https';
 
 class API extends Server {
     /**
@@ -112,7 +113,169 @@ class API extends Server {
                 let err = {
                     tip: '获取地址失败',
                     response: result,
-                    url: '//elm.cangdu.org/v1/carts/addresses'
+                    url: '//elm.cangdu.org/v1/users/'+ id + '/addresses'
+                }
+                throw err
+            }
+        } catch (err) {
+            throw err
+        }
+    }
+
+    /**
+     *  用途：搜索符合条件的地址
+     *  @param {*} data
+     *  @memberof API
+     */
+    async searchPois(data) {
+        try {
+            let result = await this.axios('get', '/v1/pois/' + getUrlConcat(data));
+            if (result) {
+                return result
+            } else {
+                let err = {
+                    tip: '搜索地点失败',
+                    response: result,
+                    url: '//elm.cangdu.org/v1/pois' + getUrlConcat(data)
+                }
+                throw err
+            }
+        } catch (err) {
+            throw err
+        }
+    }
+
+    /**
+     *  用途：根据经纬度获取地点信息
+     *  @param {*} data
+     *  @memberof API
+     */
+    async getPoisSite(data) {
+        try {
+            let result = await this.axios('get', '/v2/pois/' + data);
+            if (result) {
+                return result
+            } else {
+                let err = {
+                    tip: '获取地点失败',
+                    response: result,
+                    url: '//elm.cangdu.org/v2/pois/' + data
+                }
+                throw err
+            }
+        } catch (err) {
+            throw err
+        }
+    }
+
+    /**
+     *  用途：获取食物种类
+     *  @param {*} data
+     *  @memberof API 
+     */
+    async getFoodTypes(data) {
+        try {
+            let result = await this.axios('get', '/v2/index_entry/' + getUrlConcat(data));
+            if (result) {
+                return result
+            } else {
+                let err = {
+                    tip: '获取食物种类失败',
+                    response: result,
+                    url: '//elm.cangdu.org/v2/index_entry/' + getUrlConcat(data)
+                }
+                throw err
+            }
+        } catch (err) {
+            throw err
+        }
+    }
+
+    /**
+     *  用途：猜测城市
+     *  @param {*} keyword
+     *  @memberof API 
+     */
+    async cityGuess(keyword) {
+        try {
+            let result = await this.axios('get', '/v1/cities?type=guess');
+            if (result) {
+                return result
+            } else {
+                let err = {
+                    tip: '城市失败',
+                    response: result,
+                    url: '//elm.cangdu.org/v1/cities?type=guess'
+                }
+                throw err
+            }
+        } catch (err) {
+            throw err
+        }
+    }
+
+    /**
+     *  用途：获取商店列表
+     *  @param {*} data
+     *  @memberof API
+     */
+    async getShopList(data) {
+        try {
+            let result = await this.axios('get', '/shopping/restaurants/' + getUrlConcat(data));
+            if (result) {
+                return result
+            } else {
+                let err = {
+                    tip: '获取商店列表失败',
+                    response: result,
+                    url: '//elm.cangdu.org/shopping/restaurants/' + getUrlConcat(data)
+                }
+                throw err
+            }
+        } catch (err) {
+            throw err
+        }
+    }
+
+    /**
+     *  用途：获取商店详情
+     *  @param {*} id
+     *  @param {*} data
+     *  @memberof API
+     */
+    async shopDetails(id, data) {
+        try {
+            let result = await this.axios('get', '/shopping/restaurant/' + id + getUrlConcat(data));
+            if (result) {
+                return result
+            } else {
+                let err = {
+                    tip: '获取商店详情失败',
+                    response: result,
+                    url: '//elm.cangdu.org/shopping/restaurant/' + id + getUrlConcat(data)
+                }
+                throw err
+            }
+        } catch (err) {
+            throw err
+        }
+    }
+
+    /**
+     *  获取食物清单
+     *  @param {*} data
+     *  @memberof API
+     */
+    async getFoodMenu(data) {
+        try {
+            let result = await this.axios('get', '/shopping/v2/menu/' + getUrlConcat(data));
+            if (result) {
+                return result
+            } else {
+                let err = {
+                    tip: '获取食物清单失败',
+                    response: result,
+                    url: '//elm.cangdu.org/shopping/v2/menu/' + getUrlConcat(data)
                 }
                 throw err
             }
@@ -121,3 +284,5 @@ class API extends Server {
         }
     }
 }
+
+export default new API()
