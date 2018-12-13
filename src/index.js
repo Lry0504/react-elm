@@ -1,10 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { Provider } from 'react-redux';
+import { AppContainer } from 'react-hot-loader'; //热加载
+import store from './store/store';
+import Route from './router/route';
 import * as serviceWorker from './serviceWorker';
+import './utils/config/rem';
+import './assets/style/base.scss';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const render = Component => {
+    ReactDOM.render(
+        <Provider store={store}>
+            {/* 使用热加载加载页面信息 */}
+            <AppContainer>
+                <Component store={store} />
+            </AppContainer>
+        </Provider>, 
+        document.getElementById('root')
+    )
+}
+
+render(Route)
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
