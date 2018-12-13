@@ -1,8 +1,5 @@
 import Server from './server';
 import { getUrlConcat } from '../utils/commons';
-import { __await } from 'tslib';
-import { EDESTADDRREQ } from 'constants';
-import { get } from 'https';
 
 class API extends Server {
     /**
