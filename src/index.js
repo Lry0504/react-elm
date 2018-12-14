@@ -10,10 +10,11 @@ import './assets/style/base.scss';
 
 const render = Component => {
     ReactDOM.render(
+        //接收Redux的store作为props，通过context对象传递给子孙组件上的connect
         <Provider store={store}>
             {/* 使用热加载加载页面信息 */}
             <AppContainer>
-                <Component store={store} />
+                <Component />
             </AppContainer>
         </Provider>, 
         document.getElementById('root')
