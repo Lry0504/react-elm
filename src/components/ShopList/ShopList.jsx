@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { is, fromJS } from 'immutable';
 import API from '../../api/api';
 import { imgUrl } from '../../utils/config/envconfig';
+import './ShopList.scss';
 
 class ShopList extends Component {
     constructor(props) {
