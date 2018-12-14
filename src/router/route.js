@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import asyncComponent from '../utils/asyncComponent';
 
 //const Footer = asyncComponent( () => import('../components/Footer/Footer') )
+//const Header = asyncComponent( () => import('../components/Header/Header') )
 
 export default class RouteConfig extends Component {
     render () {
