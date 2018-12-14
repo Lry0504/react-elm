@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { baseUrl } from '../utils/config/envconfig';
+//import { baseUrl } from '../utils/config/envconfig';
 
 /**
  *  @params method {string} 方法名
@@ -15,12 +15,13 @@ import { baseUrl } from '../utils/config/envconfig';
  *  注意：params中的数据会覆盖method url 参数，所以如果指定了这两个参数则不需要在params中带入
  */
 export default class Server {
+
     axios(method, url, data) {
         return new Promise( (resolve, reject) => {
             let _option = {
                 method,
                 url,
-                baseUrl: baseUrl,
+                baseUrl: 'https://elm.cangdu.org',
                 timeout: 30000,
                 params: null,
                 data: data,
