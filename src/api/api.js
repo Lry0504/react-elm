@@ -11,7 +11,7 @@ class API extends Server {
      */
     async getCaptchaCode() {
         try {
-            let result = await this.axios('post', '/v1/captchas',{});
+            let result = await this.axios('post', 'https://elm.cangdu.org/v1/captchas',{});
             if (result.status === 1 && (result instanceof Object)) {
                 return result || []
             } else {
@@ -34,7 +34,7 @@ class API extends Server {
      */
     async accountLogin(data) {
         try {
-            let result = await this.axios('post', '/v2/login', data);
+            let result = await this.axios('post', 'https://elm.cangdu.org/v2/login', data);
             if (result.status !== 0 && (result instanceof Object)) {
                 return result || []
             } else {
@@ -51,11 +51,12 @@ class API extends Server {
 
     /**
      *  用途：获取用户信息
+     *  @url: https://elm.cangdu.org/v1/user
      *  @param {*} get的拼接参数
      */
     async getUser(data) {
         try {
-            let result = await this.axios('get', '/v1/user' + getUrlConcat(data));
+            let result = await this.axios('get', 'https://elm.cangdu.org/v1/user' + getUrlConcat(data));
             if (result.status !== 0 && (result instanceof Object)) {
                 return result || []
             } else {
@@ -79,7 +80,7 @@ class API extends Server {
      */
     async uploadImg(data) {
         try {
-            let result = await this.axios('post', '//elm.cangdu.org.v1/addimg/shop', data);
+            let result = await this.axios('post', 'https://elm.cangdu.org/v1/addimg/shop', data);
             if (result.status === 1) {
                 return result
             } else {
@@ -96,14 +97,14 @@ class API extends Server {
     }
 
     /**
-     *  用途：获取用户地址列表
-     *  @url https://elm.cangdu.org/v1/users/
+     *  用途：获取用户收货地址列表
+     *  @url https://elm.cangdu.org/v1/users/:user_id/addresses
      *  返回status为1表示成功
      *  @method get
      */
     async getAddress(id) {
         try {
-            let result = await this.axios('get', '/v1/users/' + id + '/addresses');
+            let result = await this.axios('get', 'https://elm.cangdu.org/v1/users/' + id + '/addresses');
             if (result) {
                 return result
             } else {
@@ -126,7 +127,7 @@ class API extends Server {
      */
     async searchPois(data) {
         try {
-            let result = await this.axios('get', '/v1/pois/' + getUrlConcat(data));
+            let result = await this.axios('get', 'https://elm.cangdu.org/v1/pois/' + getUrlConcat(data));
             if (result) {
                 return result
             } else {
@@ -149,7 +150,7 @@ class API extends Server {
      */
     async getPoisSite(data) {
         try {
-            let result = await this.axios('get', '/v2/pois/' + data);
+            let result = await this.axios('get', 'https://elm.cangdu.org/v2/pois/' + data);
             if (result) {
                 return result
             } else {
@@ -172,7 +173,7 @@ class API extends Server {
      */
     async getFoodTypes(data) {
         try {
-            let result = await this.axios('get', '/v2/index_entry/' + getUrlConcat(data));
+            let result = await this.axios('get', 'https://elm.cangdu.org/v2/index_entry/' + getUrlConcat(data));
             if (result) {
                 return result
             } else {
@@ -195,7 +196,7 @@ class API extends Server {
      */
     async cityGuess(keyword) {
         try {
-            let result = await this.axios('get', '/v1/cities?type=guess');
+            let result = await this.axios('get', 'https://elm.cangdu.org/v1/cities?type=guess');
             if (result) {
                 return result
             } else {
@@ -218,7 +219,7 @@ class API extends Server {
      */
     async getShopList(data) {
         try {
-            let result = await this.axios('get', '/shopping/restaurants/' + getUrlConcat(data));
+            let result = await this.axios('get', 'https://elm.cangdu.org/shopping/restaurants/' + getUrlConcat(data));
             if (result) {
                 return result
             } else {
@@ -242,7 +243,7 @@ class API extends Server {
      */
     async shopDetails(id, data) {
         try {
-            let result = await this.axios('get', '/shopping/restaurant/' + id + getUrlConcat(data));
+            let result = await this.axios('get', 'https://elm.cangdu.org/shopping/restaurant/' + id + getUrlConcat(data));
             if (result) {
                 return result
             } else {
@@ -265,7 +266,7 @@ class API extends Server {
      */
     async getFoodMenu(data) {
         try {
-            let result = await this.axios('get', '/shopping/v2/menu/' + getUrlConcat(data));
+            let result = await this.axios('get', 'https://elm.cangdu.org/shopping/v2/menu/' + getUrlConcat(data));
             if (result) {
                 return result
             } else {
