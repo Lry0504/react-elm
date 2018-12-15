@@ -1,44 +1,96 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## react-elm
 
-## Available Scripts
+![](https://img.shields.io/badge/react-16.5.2-blue.svg)
+![](https://img.shields.io/badge/react--redux-5.0.7-green.svg)![](https://img.shields.io/badge/react--router--dom-4.3.1-f1ddb4.svg)
+![](https://img.shields.io/badge/axios-0.18.0-ff69b4.svg)
+![](https://img.shields.io/badge/swiper-4.4.1-yellow.svg)
+![](https://img.shields.io/badge/webpack-4.19.1-003366.svg)
 
-In the project directory, you can run:
+# 前言
+最近在学完react基础,迫切想找一个实战项目来练手深入了解react, 在看到bailicangdu大神使用vue实现的elm45页项目的时候果断选择了elm,后台数据都是使用bailicangdu提供的数据接口(感谢bailicangdu).</br>
+该项目是饿了吗, 11月份的时候就开始构思项目整体架构，也参照了bailicangdu大神的项目架构，大致完善了react-elm的整体开发思路，目前开发了常用组件Header、Footer、ShopList等,pages页面开发目前只实现了Home首页，其余功能后期不断完善...
+# 技术栈
+react + react-redux + react-router + es6 + axios + sass + webpack
+# 说明
+> API接口地址[点这里](https://github.com/bailicangdu/node-elm/blob/master/API.md)
+# 项目运行
+`node >= 6.0`
+```
+  git clone git@github.com:Lry0504/react-elm.git
+  cd react-elm
+  npm install 或用 cnpm
+  npm start
+```
+# 演示
 
-### `npm start`
+> 项目暂未完成，该功能暂时未开放
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+# 项目效果截图展示
+<img src="https://github.com/Lry0504/image_resources/blob/master/images/Home.png" width="322" height="571"/>
 
-### `npm test`
+# 项目整体结构
+```javascript
+├── config            ------------------webpack配置
+│   ├── env.js       
+│   ├── jest          
+│   │   ├── cssTransform.js
+│   │   └── fileTransform.js
+│   ├── paths.js
+│   ├── webpack.config.dev.js
+│   ├── webpack.config.prod.js
+│   └── webpackDevServer.config.js
+├── yarn.lock
+├── package.json    --------------------项目package.json
+├── public          --------------------出口
+│   ├── favicon.ico
+│   ├── index.html
+│   └── manifest.json
+├── scripts        ---------------------运行的脚本
+│   ├── build.js
+│   ├── start.js
+│   └── test.js
+├── src           ----------------------源码目录
+│   ├── api       ----------------------API目录
+│   │   ├── api.js
+│   │   └── server.js
+│   ├── assets   -----------------------静态资源目录
+│   │   ├── iconfont -------------------iconfont目录
+│   │   └── style   --------------------基础样式文件
+│   │       ├── base.scss
+│   │       ├── mixin.scss
+│   │       └── swiper.min.css
+│   ├── components   -------------------公共组件
+│   │   ├── LogoutTip  -----------------退出提示组件
+│   │   ├── Footer   -------------------底部导航栏组件
+│   │   ├── Header  --------------------头部组件
+│   │   ├── Loader  --------------------加载组件
+│   │   └── ShopList -------------------商店列表组件
+│   ├── index.js    --------------------入口
+│   ├── pages       --------------------页面目录
+│   │   ├── Home    --------------------主页面
+│   │   ├── Food   ---------------------食物页面
+│   │   ├── UserInfo  ------------------个人信息页面
+│   │   ├── Login  ---------------------登录页面
+│   │   ├── User   ---------------------个人中心页面
+│   │   ├── SetUserInfo ----------------用户信息设置页面
+│   │   ├── ShopDetails   --------------商店详情页面
+│   │   └── other  ---------------------其他页面后续再考虑开发...
+│   ├── router   -----------------------路由
+│   │   └── route.js
+│   ├── serviceWorker.js  --------------热加载
+│   ├── store   ------------------------react-redux状态管理目录
+│   │   ├── store.js
+│   │   └── User
+│   │       ├── action
+│   │       ├── action-type
+│   │       └── reducer
+│   └── utils  ------------------------公用方法
+│       ├── config  -------------------全局配置文件
+│       │   ├──envconfig.js  ----------全局配置
+│       │   └──rem.js   ---------------移动端适配
+│       ├── asyncComponent.jsx  -------异步加载组件
+│       └── commons.js  ---------------公用方法
+├── README.md      ----------------------README
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
