@@ -15,7 +15,9 @@ class ShopList extends Component {
           };
     }
     static propTypes = {
-        geohash: PropTypes.array.isRequired //经纬度
+        geohash: PropTypes.oneOfType(
+            [PropTypes.string,PropTypes.array]
+          ) //经纬度
     }
     getShopList = async (props) => {
         let obj = {
