@@ -27,7 +27,7 @@ react + react-redux + react-router + es6 + axios + sass + webpack
 
 
 # 项目效果截图展示
-<img src="https://github.com/Lry0504/image_resources/blob/master/images/Home.png" width="322" height="571"/>
+<img src="https://github.com/Lry0504/image_resources/blob/master/react-elm-img/Home.png" width="322" height="571"/> &#160;&#160;<img src="https://github.com/Lry0504/image_resources/blob/master/react-elm-img/Food.png" width="319" height="570"/>
 
 # 项目整体结构
 ```javascript
