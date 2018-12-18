@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import asyncComponent from '../utils/asyncComponent';
 
 const Home = asyncComponent( () => import('../pages/Home/Home') )
-//const Header = asyncComponent( () => import('../components/Header/Header') )
+const Food = asyncComponent( () => import('../pages/Food/Food') )
 
 export default class RouteConfig extends Component {
     render () {
@@ -11,7 +11,7 @@ export default class RouteConfig extends Component {
             <Router>
                 <Switch>
                     <Route path="/home" exact component={Home} /> {/*首页路由*/}
-                   
+        <Route path="/food/:geohash/:id/:title" component={Food} /> {/*首页nav导航食物页面*/}
                     <Redirect exact from="/" to="/home" />  {/*重定向到 -->> 首页路由*/}
                 </Switch>
             </Router>
