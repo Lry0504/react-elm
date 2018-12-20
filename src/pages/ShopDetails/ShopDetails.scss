@@ -3,8 +3,8 @@
 
 @keyframes active {
     from, 50%, 100% {
-        -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
-        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
     }
     0% {
         transform: scale(1);
@@ -27,11 +27,10 @@
 }
 .shop-container {
     display: flex;
-    width: 100%;
     height: 100%;
     position: absolute;
     left: 0;
-    top: 0;
+    right: 0;
     flex-direction: column;
 }
 .activity-menu {
@@ -337,7 +336,7 @@
             background-color: #3190e8;
         }
         .animate {
-            animation: active 0.5s ease-in-out;
+            animation: active .5s ease-in-out;
         }
         .cart-num {
             @include positionHCenter;
@@ -358,7 +357,6 @@
     .gotopay {
         position: absolute;
         right: 0;
-        top: 0;
         background-color: #535356;
         @include wh(5rem, 100%);
         text-align: center;
@@ -369,8 +367,8 @@
         }
     }
     .gotopay-active {
-        animation: active 0.5s ease-in-out;
         background-color: #4cd964;
+        animation: active 0.5s ease-in-out;
     }
 }
 .cart-food-list {
@@ -438,28 +436,29 @@
 .shop-enter {
     opacity: 0;
 }
-.shop-enter .shop-enter-active {
+.shop-enter.shop-enter-active {
     transition: all 1000ms;
     opacity: 0.7;
 }
 .shop-leave {
     opacity: 1;
 }
-.shop-leave .shop-leave-active {
+.shop-leave.shop-leave-active {
     transition: all 300ms;
     opacity: 0;
 }
+
 .cart-enter {
     transform: scale(0.1) translateY(0.5rem);
 }
-.cart-enter .cart-enter-active {
+.cart-enter.cart-enter-active {
     transform: scale(1.0) translateY(1.5rem);
     transition: all 0.3s ease;
 }
 .cart-leave {
     transform: scale(1.0) translateY(1.5rem);
 }
-.cart-leave .cart-leave-active {
+.cart-leave.cart-leave-active {
     transition: all 0.3s ease;
     transform: scale(0.2);
 }
