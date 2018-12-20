@@ -46,7 +46,6 @@ class ShopDetails extends Component {
         let res = await API.shopDetails(id, obj);
         let menu = await API.getFoodMenu({restaurant_id: id})
         menu = this.setNumOfMenu(menu);
-        console.log(menu)
         let foodList = this.setFoodList(menu);
         this.setState({
             shopDetailData: res,
@@ -86,7 +85,7 @@ class ShopDetails extends Component {
         })
         return menu
     }
-    handleClick = type => {
+    handleClick = (type) => {
         let alertText;
         switch (type) {
             case 'download':
@@ -96,7 +95,6 @@ class ShopDetails extends Component {
                 alertText = "功能尚未开发"
                 break
             default:
-                break
         }
         this.setState({
             hasAlert: !this.state.hasAlert,
@@ -118,6 +116,7 @@ class ShopDetails extends Component {
             foodList: fromJS(this.state.initList).toJS(),
             totalPrice: 0,
             count: 0,
+            miniMoney: this.state.shopDetailData.float_minimum_order_amount,
             isShowCart: false
         })
     }
@@ -173,7 +172,7 @@ class ShopDetails extends Component {
                         alt=""
                     />
                     <div className="description-header">
-                        <Link className="description-top" to="/shop/shopDetail">
+                        <Link className="description-top" to="/shop/shopDetail/">
                             <div className="description-left">
                                 <img 
                                     src={imgUrl + this.state.shopDetailData.image_path}
@@ -219,10 +218,16 @@ class ShopDetails extends Component {
                 </header>
                 <div className="change-show-type">
                     <div>
-                        <span className={this.state.active === 'food' ? 'activity-show' : ''}>商品</span>
+                        <span 
+                            className={this.state.active === 'food' ? 'activity-show' : ''}
+                            onClick={this.changeShowType.bind(this, 'food')}
+                        >商品</span>
                     </div>
                     <div>
-                        <span className={this.state.active === 'rating' ? 'activity-show' : ''}>评价</span>
+                        <span 
+                            className={this.state.active === 'rating' ? 'activity-show' : ''}
+                            onClick={this.changeShowType.bind(this, 'rating')}
+                        >评价</span>
                     </div>
                 </div>
                 <ReactCSSTransitionGroup
@@ -238,7 +243,7 @@ class ShopDetails extends Component {
                                 <div className="menu-left">
                                     <ul>
                                         {
-                                            this.state.menuList.map( (item,index) => {
+                                            this.state.menuList.map( (item, index) => {
                                                 return (
                                                     <li 
                                                         className={this.state.activeIndex === index ? 'activity-menu menu-left-li' : 'menu-left-li'}
@@ -271,7 +276,7 @@ class ShopDetails extends Component {
                                                             this.state.displayList.map( (food, foodIndex) => {
                                                                 return (
                                                                     <div className="menu-detail-list" key={foodIndex}>
-                                                                        <Link className="menu-detail-link" to="/shop/foodDetail">
+                                                                        <Link className="menu-detail-link" to="/shop/foodDetail/">
                                                                             <div className="menu-food-img">
                                                                                 <img src={imgUrl + food.image_path} alt=""/>
                                                                             </div>
@@ -302,7 +307,7 @@ class ShopDetails extends Component {
                                                                                 </p>
                                                                                 {
                                                                                     food.activity && 
-                                                                                    <p className="food=activity">
+                                                                                    <p className="food-activity">
                                                                                         <span>{food.activity.image_text}</span>
                                                                                     </p>
                                                                                 }
@@ -317,7 +322,12 @@ class ShopDetails extends Component {
                                                                                     }
                                                                                 </div>
                                                                                 <div className="add-del-icon">
-                                                                                    <div className="icon-wuuiconsuoxiao" onClick={this.handleAddFoodCount.bind(this, food.num, -1)}></div>
+                                                                                    {
+                                                                                        this.state.foodList[food.num].qty === 0 ?
+                                                                                        <div className="icon-wuuiconsuoxiao"></div>
+                                                                                        :
+                                                                                        <div className="icon-wuuiconsuoxiao" onClick={this.handleAddFoodCount.bind(this, food.num, -1)}></div>
+                                                                                    }
                                                                                     <div>{this.state.foodList[food.num].qty}</div>
                                                                                     <div className="icon-wuuiconxiangjifangda" onClick={this.handleAddFoodCount.bind(this, food.num, 1)}></div>
                                                                                 </div>
@@ -365,7 +375,7 @@ class ShopDetails extends Component {
                             </div>
                             <ReactCSSTransitionGroup
                                 component={this.CartFirstChild}
-                                transitionName="cart"
+                                transitionName='cart'
                                 transitionEnterTimeout={600}
                                 transitionLeaveTimeout={300}
                             >
