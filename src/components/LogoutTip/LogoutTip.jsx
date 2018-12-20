@@ -7,10 +7,16 @@ class LogoutTip extends Component {
         super(props);
         this.state = {  };
     }
-    static PropTypes = {
+    static propTypes = {
         alertText: PropTypes.string.isRequired, //提示内容
         closeTip: PropTypes.func.isRequired,    //关闭提示
         logout: PropTypes.func  //退出
+    }
+    handleClick = () => {   //关闭
+        this.props.closeTip()
+    }
+    handleLogout = () => {  //退出登录
+        this.props.logout()
     }
     render() {
         return (
