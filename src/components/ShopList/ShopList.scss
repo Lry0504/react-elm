@@ -40,6 +40,7 @@
 .shop-item {
     display: flex;
     padding: 0.7rem 0.3rem;
+    border-bottom: 1px solid #f1f1f1;
     img {
         @include wh(2.7rem, 2.7rem);
         display: block;
