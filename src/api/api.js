@@ -64,7 +64,7 @@ class API extends Server {
                     tip: '获取用户信息失败',
                     response: result
                 }
-                throw err
+                return err
             }
         } catch (err) {
             throw err
@@ -73,21 +73,21 @@ class API extends Server {
 
     /**
      *  用途：上传图片
-     *  @url https://elm.cangdu.org/v1/addimg/shop
+     *  @url https://elm.cangdu.org/v1/addimg/avatar
      *  返回status为1表示成功
      *  @method post
      *  @return {Promise}
      */
     async uploadImg(data) {
         try {
-            let result = await this.axios('post', 'https://elm.cangdu.org/v1/addimg/shop', data);
+            let result = await this.axios('post', 'https://elm.cangdu.org/v1/addimg/avatar', data);
             if (result.status === 1) {
                 return result
             } else {
                 let err = {
                     tip: '上传图片失败',
                     response: result,
-                    url: '//elm.cangdu.org/v1/addimg/shop'
+                    url: '//elm.cangdu.org/v1/addimg/avatar'
                 }
                 throw err
             }
