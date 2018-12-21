@@ -76,8 +76,8 @@ class Home extends Component {
         this.getPoisSite([res.latitude, res.longitude]);
         this.getFoodTypes();
     }
-    goHome = () => {
-        this.props.history.push('/')
+    goUser = () => {
+        this.props.history.push('/user')
     }
     componentWillMount() {
         setTimeout(this.cityGuess, 2000);
@@ -93,7 +93,7 @@ class Home extends Component {
     render() {
         return (
             <React.Fragment>
-                <Header title={this.state.title} signUp={true} goHome={this.goHome} />
+                <Header title={this.state.title} signUp={true} goHome={this.goUser} />
                 <nav className="home-nav">
                     <div className="swiper-container">
                         <div className="swiper-wrapper">
