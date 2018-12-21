@@ -80,7 +80,7 @@ class Home extends Component {
         this.props.history.push('/user')
     }
     componentWillMount() {
-        setTimeout(this.cityGuess, 2000);
+        setTimeout(this.cityGuess, 800);
     }
     shouldComponentUpdate(nextProps, nextState) {
         let refresh = !is(fromJS(this.props),fromJS(nextProps)) || !is(fromJS(this.state), fromJS(nextState));
