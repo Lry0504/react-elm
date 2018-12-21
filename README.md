@@ -8,7 +8,7 @@
 
 # 前言
 最近在学完react基础,迫切想找一个实战项目来练手深入了解react, 在看到bailicangdu大神使用vue实现的elm45页项目的时候果断选择了elm,后台数据都是使用bailicangdu提供的数据接口(感谢bailicangdu).</br>
-该项目是饿了吗, 11月份的时候就开始构思项目整体架构，也参照了bailicangdu大神的项目架构，大致完善了react-elm的整体开发思路，目前开发了常用组件Header、Footer、ShopList等,pages页面开发目前只实现了Home首页，其余功能后期不断完善...
+该项目是饿了吗, 11月份的时候就开始构思项目整体架构，也参照了liuyangjike的项目架构，大致完善了react-elm的整体开发思路，目前开发了常用组件Header、Footer、ShopList等,pages页面开发目前只实现了Home首页，其余功能后期不断完善...
 # 技术栈
 react + react-redux + react-router + es6 + axios + sass + webpack
 # 说明
