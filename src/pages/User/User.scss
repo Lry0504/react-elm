@@ -1,0 +1,128 @@
+@import '../../assets/style/mixin.scss';
+@import '../../assets/iconfont/iconfont.css';
+
+.profile-container {
+    p, span {
+        font-family: Helvetica Neue,Tahoma,Arial;
+    }
+    .profile-number {
+        padding-top: 1.96rem;
+        .profile-link {
+            display: block;
+            @include flex(none);
+            padding: 0.666667rem 0.6rem;
+            box-align: center;
+            background-color: $blue;
+            .private-image {
+                display: inline-block;
+                @include wh(2.5rem, 2.5rem);
+                border-radius: 50%;
+                font-size: 0.2rem;
+                vertical-align: middle;
+            }
+            .user-info {
+                margin-left: 0.48rem;
+                flex-grow: 1;   //设置或检索弹性盒子的扩展比率
+                div {
+                    font-weight: 700;
+                    @include font(0.8rem, $fc);
+                }
+                .icon-tel {
+                    display: inline-block;
+                }
+                .icon-mobile-phone {
+                    @include font(0.5rem, $fc);
+                }
+            }
+            .icon-arrow-right {
+                @include font(18px, $fc);
+            }
+        }
+    }
+    .info-data {
+        width: 100%;
+        box-sizing: border-box;
+        background-color: $fc;
+        ul {
+            .info-data-link {
+                width: 33.33%;
+                display: inline-block;
+                border-right: 1px solid #f1f1f1;
+                span {
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                }
+                .info-data-top {
+                    @include font(0.55rem, #333, center);
+                    padding: 0.853333rem 0 0.453333rem;
+                    b {
+                        display: inline-block;
+                        @include font(1.2rem, #f90);
+                        font-weight: 700;
+                        line-height: 1rem;
+                        font-family: Helvetica Neue,Tahoma;
+                    }
+                }
+                .info-data-bottom {
+                    @include font(0.5733rem, #666, center);
+                    font-weight: 400;
+                    padding-bottom: 0.45333rem;
+                }
+            }
+            .info-data-link:nth-of-type(2) {
+                .info-data-top {
+                    b {
+                        color: #ff5f3e;
+                    }
+                }
+            }
+            .info-data-link:nth-of-type(3) {
+                border: 0;
+                .info-data-top {
+                    b {
+                        color: #6ac20b;
+                    }
+                }
+            }
+        }
+    }
+    .profile-list {
+        margin-top: 0.4rem;
+        background-color: $fc;
+        .myorder {
+            padding-left: 1.1rem;
+            @include flex();
+            .order-icon {
+                @include font(0.7rem, #666);
+                margin-right: 0.26667rem;
+                align-items: center;
+            }
+            .icon-jifen1 {
+                color: rgb(235, 142, 142);
+            }
+            .icon-huangguan {
+                margin-left: -0.1rem;
+                @include font(0.8rem, orange);
+            }
+            .icon-yk_fangkuai_fill {
+                color: $blue;
+            }
+            .icon-changyonglogo40 {
+                background-color: $blue;
+                border-radius: 0.1rem;
+                @include font(0.65rem, $fc);
+            }
+            .myorder-text {
+                @include flex(space-between);
+                @include font(0.7rem, #333);
+                width: 100%;
+                padding: 0.433rem 0.2667rem 0.433rem 0;
+                border-bottom: 1px solid #f1f1f1;
+                .icon-arrow-right {
+                    @include font(18px, #777);
+                }
+            }
+        }
+    }
+}
