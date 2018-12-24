@@ -38,7 +38,7 @@ class User extends Component {
             newState.balance = this.props.userInfo.balance;
             newState.count = this.props.userInfo.gift_amount;
             newState.pointNumber = this.props.userInfo.point;
-            newState.avatar = getImagePath(this.props.userInfo.avatar);
+            newState.avatar = 'https://elm.cangdu.org/img/default.jpg';
         } else {
             newState.mobile = '暂无绑定手机号';
             newState.username = '登录 / 注册';
@@ -80,9 +80,9 @@ class User extends Component {
         //组件挂载之前，先判断用户是否已经存在，如果存在，则从store中获取用户信息
         if (this.props.userInfo.user_id) {
             this.initData()
-            return
+        } else {
+            this.getUserInfo()
         }
-        this.getUserInfo()
     }
     componentWillReceiveProps(nextProps) {
         //属性props改变时
@@ -188,16 +188,9 @@ class User extends Component {
         )
     }
 }
-const mapStateToProps = (state) => {
-    return {
-        userInfo: state.userInfo
-    }
-}
-const mapDispatchToProps = {
-    saveUserInfo
-}
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(User)
+export default connect((state) => ({
+        userInfo: state.userInfo
+}),{
+    saveUserInfo
+})(User)
