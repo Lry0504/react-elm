@@ -79,10 +79,10 @@ class Login extends Component {
                 alertText: res.response.message
             })
             this.getCaptchaCode();
-            return
+        } else {
+            setStore('user_id', res.user_id);
+            this.props.saveUserInfo(res);
         }
-        setStore('user_id', res.user_id);
-        this.props.saveUserInfo(res);
         this.props.history.push('/user');
     }
     changePasswordType = () => {
