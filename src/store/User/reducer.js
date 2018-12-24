@@ -21,6 +21,11 @@ export const userInfo = (state = defaultState, action ={}) => {
                 ...state,
                 ...action.value
             }
+        case user.DEL_USERINFO:
+            return {
+                ...state,
+                ...action.value
+            }
         case user.RESET_USERINFO:
             return {
                 ...state,

@@ -24,7 +24,7 @@ export const getStore = name => {
  *  删除localStorage
  *  @param {*} name
  */
-export const removeStroe = name => {
+export const removeStore = name => {
     if(!name) return
     window.localStorage.removeItem(name);
 }
@@ -52,7 +52,6 @@ export const getUrlConcat = function(data) {
 export const getImagePath = (path) => {
     //传递过来的图片地址需要处理后才能正常使用(path)
     let img;
-    console.log(path)
     //路径错误
     if(!path || path === 'default.jpg') {
         return 'https://elm.cangdu.org/img/default.jpg'

@@ -7,7 +7,13 @@ export const saveUserInfo = (value) => {
         value
     }
 }
-
+//删除用户数据
+export const delUserInfo = (value) => {
+    return {
+        type: user.DEL_USERINFO,
+        value
+    }
+}
 //修改用户信息
 export const resetUserInfo = (datatype, value) => {
     return {
