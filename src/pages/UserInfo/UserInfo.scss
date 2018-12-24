@@ -1,0 +1,93 @@
+@import '../../assets/style/mixin.scss';
+@import '../../assets/iconfont/iconfont.css';
+
+.rating-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f2f2f2;
+    z-index: 201;
+    padding-top: 1.95rem;
+    p, span {
+        font-family: Helvetica Neue,Tahoma,Arial;
+    }
+    .profile-info {
+        @include wh(100%, 3.1rem);
+        .profile-info-upload {
+            display: block;
+            position: absolute;
+            opacity: 0;
+            left: 0;
+            @include wh(100%, 3.1rem);
+        }
+        .headportrait {
+            @include flex(space-between);
+            margin-top: 0.4rem;
+            padding: 0 0.4rem;
+            border-top: 1px solid #ddd;
+            background-color: #fff;
+            h2 {
+                @include font(0.2rem, #666);
+                // font-weight: 600;
+                @include flex;
+            }
+            .info-item {
+                @include flex;
+                @include font(0.7rem, #ccc);
+                .headport-top {
+                    @include wh(2rem, 2rem);
+                    border-radius: 50%;
+                    vertical-align: middle;
+                }
+                .icon-arrow-right {
+                    margin-left: 0.5rem;
+                    color: #ccc;
+                }
+            }
+        }
+        .headportraitwo {
+            margin-top: 0;
+            padding: 0.6rem 0.4rem;
+            font-family: Arial;
+        }
+        .headportraithree {
+            margin-top: 0;
+            border-bottom: 1px solid #ddd;
+            padding: 0.6rem 0.4rem;
+            font-family: Arial;
+        }
+        .bind-phone {
+            @include font(0.5rem, #666);
+            padding: 0.4rem;
+        }
+        .headportraitfour {
+            padding: 0.6rem 0.4rem;
+            border-bottom: 1px solid #ddd;
+            .headport-phone {
+                @include flex;
+                h2 {
+                    margin-left: 0.2rem;
+                }
+            }
+        }
+        .headport-modify {
+            @include font(0.7rem, #ccc);
+            font-weight: bold;
+        }
+        .exit-login {
+            width: 96%;
+            margin: 1.3rem auto 0;
+            line-height: 1.5rem;
+            border-radius: 5px;
+            background-color: #d8584a;
+            @include font(0.6rem, #fff);
+            text-align: center;
+        }
+        .exit-login:active {
+            opacity: 0.8;
+            background-color: #c1c1c1;
+        }
+    }
+}
