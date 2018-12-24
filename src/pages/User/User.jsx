@@ -38,7 +38,7 @@ class User extends Component {
             newState.balance = this.props.userInfo.balance;
             newState.count = this.props.userInfo.gift_amount;
             newState.pointNumber = this.props.userInfo.point;
-            newState.avatar = ('/img/' + this.props.userInfo.avatar);
+            newState.avatar = getImagePath(this.props.userInfo.avatar);
         } else {
             newState.mobile = '暂无绑定手机号';
             newState.username = '登录 / 注册';
