@@ -1,0 +1,93 @@
+@import '../../assets/style/mixin.scss';
+
+.login-container {
+    padding-top: 1.95rem;
+    p, span, input {
+        font-family: Helvetica Neue,Tahoma,Arial;
+    }
+}
+.login-tips {
+    @include font(0.5rem, red);
+    padding: 0.4rem 0.6rem;
+    line-height: 0.5rem;
+    a {
+        color: #3b95e9;
+    }
+}
+.login-button {
+    margin: 0 0.5rem 1rem;
+    @include font(0.7rem, #fff);
+    background-color: #4cd964;
+    padding: 0.5rem 0;
+    border: 1px;
+    border-radius: 0.15rem;
+    text-align: center;
+}
+.button-switch {
+    position: relative;
+    background-color: #ccc;
+    @include flex();
+    @include wh(2.5rem, 1.2rem);
+    border-radius: 0.8rem;
+    .circle-button {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        border-radius: 50%;
+        transition: all 0.3s;
+        @include wh(1.2rem, 1.2rem);
+        background-color: #f1f1f1;
+    }
+    .trans-to-right {
+        transform: translateX(1.3rem);
+    }
+    span {
+        @include font(0.45rem, #fff);
+        transform: translateY(0.05rem);
+    }
+    span:nth-of-type(2) {
+        transform: none;
+        margin-left: 0.25rem;
+    }
+}
+.change-to-text {
+    background-color: #4cd964;
+}
+.to-forget {
+    float: right;
+    @include font(0.6rem, #3b95e9);
+    margin-right: 0.5rem;
+}
+.login-form {
+    margin-top: 0.6rem;
+    background-color: #fff;
+    .input-container {
+        @include flex(space-between);
+        padding: 0.6rem 0.8rem;
+        border-bottom: 1px solid #f1f1f1;
+        input {
+            @include font(0.7rem, #666);
+        }
+    }
+    .captcha-code-container {
+        height: 2.2rem;
+        .img-change-img {
+            @include flex();
+            img {
+                @include wh(3.5rem, 1.5rem);
+                margin-right: 0.2rem;
+                font-size: 0.2rem;
+            }
+            .change-img {
+                @include flex();
+                flex-direction: column;
+                flex-wrap: wrap;
+                width: 2rem;
+                p {
+                    @include font(0.55rem, #666);
+                }
+            }
+        }
+    }
+}
