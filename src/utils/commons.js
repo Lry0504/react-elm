@@ -52,16 +52,20 @@ export const getUrlConcat = function(data) {
 export const getImagePath = (path) => {
     //传递过来的图片地址需要处理后才能正常使用(path)
     let img;
+    console.log(path)
     //路径错误
-    if(!path) {
-        return '//elm.cangdu.org/img/default.jpg'
-    }
-    //.jpeg格式图片
-    if (path.indexOf('.jpeg') !== -1) {
-        img = '.jpeg';
+    if(!path || path === 'default.jpg') {
+        return 'https://elm.cangdu.org/img/default.jpg'
     } else {
-        img = '.png'
+        //.jpeg格式图片
+        if (path.indexOf('.jpeg') !== -1) {
+            img = '.jpeg';
+        } else if (path.indexOf('.png') !== -1) {
+            img = '.png'
+        } else {
+            img = '.jpg'
+        }
+        let url = '/' + path.substr(0, 1) + '/' + path.substr(1, 2) + '/' + path.substr(3) + img;
+        return 'https://fuss10.elemecdn.com' + url
     }
-    let url = '/' + path.substr(0, 1) + '/' + path.substr(1, 2) + '/' + path.substr(3) + img;
-    return 'https://fuss10.elemecdn.com' + url
 }
