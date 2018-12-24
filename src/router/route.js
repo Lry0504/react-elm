@@ -7,6 +7,7 @@ const Food = asyncComponent( () => import('../pages/Food/Food') )
 const ShopDetails = asyncComponent( () => import('../pages/ShopDetails/ShopDetails') )
 const User = asyncComponent( () => import('../pages/User/User') )
 const Login = asyncComponent( () => import('../pages/Login/Login') )
+const UserInfo = asyncComponent( () => import('../pages/UserInfo/UserInfo') )
 
 export default class RouteConfig extends Component {
     render () {
@@ -18,6 +19,7 @@ export default class RouteConfig extends Component {
                     <Route path="/shop/:id" component={ShopDetails} />
                     <Route path="/user" component={User} />  {/*个人中心路由*/}
                     <Route path="/login" component={Login} /> {/*登录路由*/}
+                    <Route path="/info" component={UserInfo} /> {/*个人信息路由*/}
                     <Redirect exact from="/" to="/home" />  {/*重定向到 -->> 首页路由*/}
                 </Switch>
             </Router>
