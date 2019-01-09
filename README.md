@@ -1,16 +1,28 @@
 ## react-elm
 
 ![](https://img.shields.io/badge/react-16.6.3-blue.svg)
-![](https://img.shields.io/badge/react-redux-6.0.0-green.svg)
-![](https://img.shields.io/badge/react-router-dom-4.3.1-f1ddb4.svg)
+![](https://img.shields.io/badge/react--redux-6.0.0-green.svg)
+![](https://img.shields.io/badge/react--router--dom-4.3.1-f1ddb4.svg)
 ![](https://img.shields.io/badge/axios-0.18.0-ff69b4.svg)
 ![](https://img.shields.io/badge/swiper-4.4.2-yellow.svg)
 ![](https://img.shields.io/badge/webpack-4.19.1-003366.svg)
 
 # 前言
 最近在学完react基础,迫切想找一个实战项目来练手深入了解react, 在看到bailicangdu大神使用vue实现的elm45页项目的时候果断选择了elm,后台数据都是使用bailicangdu提供的数据接口(感谢bailicangdu).</br>
-该项目是饿了吗, 11月份的时候就开始构思项目整体架构，也参照了liuyangjike的项目架构，大致完善了react-elm的整体开发思路，目前开发了常用组件Header、Footer、ShopList等,pages页面开发目前只实现了Home首页，其余功能后期不断完善...
-`项目框架整体重构中。。。`
+该项目是饿了吗, 11月份的时候就开始构思项目整体架构，也参照了liuyangjike的项目架构，大致完善了react-elm的整体开发思路。
+```
+ 目前完成量：
+ 1、components组件：Footer（尾部）、Header（头部）、Loader（加载）、LogoutTip（提示）、ShopList（店铺列表）
+ 2、pages页面：Food（首页nav导航食物页面）、Home（主页）、Login（登录页）、SetUserInfo（设置用户信息）、ShopDetails（店铺详情页）、User（个人中心也）、UserInfo（个人信息页）
+```
+`后期：项目架构整体重构中。。。`
+```
+  项目重新架构，可能考虑增加新功能：
+  1、增加Header组件中的search搜索功能，并关联到搜索Search页面
+  2、新增搜索Search页面
+  3、ShopDetails店铺详情页增加店铺活动详情页面
+  4、后期具体功能待完善...
+```
 # 技术栈
 react + react-redux + react-router + es6 + axios + sass + webpack
 # 说明
@@ -29,7 +41,7 @@ react + react-redux + react-router + es6 + axios + sass + webpack
 
 
 # 项目效果截图展示
-<img src="https://github.com/Lry0504/image_resources/blob/master/react-elm-img/Home.png" width="322" height="571"/> &#160;&#160;<img src="https://github.com/Lry0504/image_resources/blob/master/react-elm-img/Food.png" width="319" height="570"/>
+<img src="https://github.com/Lry0504/image_resources/blob/master/react-elm-img/Home.png" width="322" height="571"/> &#160;<img src="https://github.com/Lry0504/image_resources/blob/master/react-elm-img/Food.png" width="319" height="570"/> &#160;<img src="https://github.com/Lry0504/image_resources/blob/master/react-elm-img/ShopDetails.png" width="320" height="570"/> &#160;<img src="https://github.com/Lry0504/image_resources/blob/master/react-elm-img/User.png" width="321" height="571"/>&#160;<img src="https://github.com/Lry0504/image_resources/blob/master/react-elm-img/UserInfo.png" width="322" height="572"/>&#160;<img src="https://github.com/Lry0504/image_resources/blob/master/react-elm-img/GIF.gif" width="321" height="566"/>
 
 # 项目整体结构
 ```javascript
