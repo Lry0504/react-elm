@@ -13,7 +13,8 @@
 ```
  目前完成量：
  1、components组件：Footer（尾部）、Header（头部）、Loader（加载）、LogoutTip（提示）、ShopList（店铺列表）
- 2、pages页面：Food（首页nav导航食物页面）、Home（主页）、Login（登录页）、SetUserInfo（设置用户信息）、ShopDetails（店铺详情页）、User（个人中心也）、UserInfo（个人信息页）
+ 2、pages页面：Food（首页nav导航食物页面）、Home（主页）、Login（登录页）、SetUserInfo（设置用户信息）、
+ ShopDetails（店铺详情页）、User（个人中心也）、UserInfo（个人信息页）
 ```
 `后期：项目架构整体重构中。。。`
 ```
