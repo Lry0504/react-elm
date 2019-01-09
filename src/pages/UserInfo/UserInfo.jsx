@@ -87,7 +87,7 @@ class UserInfo extends Component {
                                     <div className="icon-arrow-right"></div>
                                 </div>
                             </section>
-                            <Link className="info-router" key="k2" to="/setuser/username">
+                            <Link className="info-router" key="k2" to="/setuser/name">
                                 <section className="headportrait headportraitwo">
                                     <h2>用户名</h2>
                                     <div className="info-item">
