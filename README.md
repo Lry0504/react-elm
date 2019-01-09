@@ -1,9 +1,10 @@
 ## react-elm
 
-![](https://img.shields.io/badge/react-16.5.2-blue.svg)
-![](https://img.shields.io/badge/react--redux-5.0.7-green.svg)![](https://img.shields.io/badge/react--router--dom-4.3.1-f1ddb4.svg)
+![](https://img.shields.io/badge/react-16.6.3-blue.svg)
+![](https://img.shields.io/badge/react-redux-6.0.0-green.svg)
+![](https://img.shields.io/badge/react-router-dom-4.3.1-f1ddb4.svg)
 ![](https://img.shields.io/badge/axios-0.18.0-ff69b4.svg)
-![](https://img.shields.io/badge/swiper-4.4.1-yellow.svg)
+![](https://img.shields.io/badge/swiper-4.4.2-yellow.svg)
 ![](https://img.shields.io/badge/webpack-4.19.1-003366.svg)
 
 # 前言
@@ -18,7 +19,7 @@ react + react-redux + react-router + es6 + axios + sass + webpack
 ```
   git clone git@github.com:Lry0504/react-elm.git
   cd react-elm
-  npm install 或用 cnpm
+  npm install
   npm start
 ```
 # 演示
